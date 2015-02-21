@@ -1,0 +1,14 @@
+{
+  "name": "theparismuseum",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.0.3",
+    "modernizr": "~2.6.2",
+    "jquery": "~1.11.0",
+    "greensock": "~1.15.1",
+    "easing": "*",
+    "waypoints": "~3.1.1",
+    "jquery-migrate-official": "~1.2.1"
+  },
+  "devDependencies": {}
+}
