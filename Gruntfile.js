@@ -192,10 +192,9 @@ module.exports = function (grunt) {
             html: ['<%= config.dist %>/{,*/}*.html'],
             css: ['<%= config.dist %>/styles/{,*/}*.css']
         },
-
         svgmin: {
             dist: {
-                files: [{
+               files: [{
                     expand: true,
                     cwd: '<%= config.app %>/images',
                     src: '{,*/}*.svg',
@@ -208,7 +207,7 @@ module.exports = function (grunt) {
             dist: {
                 options: {
                     collapseBooleanAttributes: true,
-                    collapseWhitespace: true,
+                    collapseWhitespace: false,
                     removeAttributeQuotes: true,
                     removeCommentsFromCDATA: true,
                     removeEmptyAttributes: true,

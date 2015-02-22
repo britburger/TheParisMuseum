@@ -8,7 +8,9 @@
     "greensock": "~1.15.1",
     "easing": "*",
     "waypoints": "~3.1.1",
-    "jquery-migrate-official": "~1.2.1"
+    "jquery-migrate-official": "~1.2.1",
+    "fastclick": "~1.0.6",
+    "sticky": "~1.0.1"
   },
   "devDependencies": {}
 }

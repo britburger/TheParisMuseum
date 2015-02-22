@@ -68,6 +68,8 @@
 
             },
             global: function() {
+                FastClick.attach(document.body);
+
 
                 $('input[type=text],input[type=password],textarea').each(function(){new _.Core.Input($(this));});
                 $('a[data-link]').each(function(){$(this).attr('target',$(this).attr('data-link'));$(this).removeAttr('data-link');});
@@ -75,6 +77,19 @@
 
                 if (!Modernizr.svg) {
                     $('img[data-png]').each(function(){$(this).attr('src',$(this).attr('data-png'));$(this).removeAttr('data-png');});
+                }
+                var $fx = $(".fx");
+                if (!_Mobile) {
+                    $(window).stuck();
+                    TweenMax.to($fx, 0, {y: 60})
+                    $($fx).waypoint(function(direction){
+                        TweenMax.to($(this.element), 0, {autoAlpha: 1, y: 0, overwrite: "all"})
+                        this.destroy()
+                    }, {
+                        offset: '85%'
+                    });
+                } else {
+                    TweenMax.to($fx, 0, {autoAlpha:1});
                 }
 
                 $('#header-image').waitForImages({
@@ -84,21 +99,10 @@
                     waitForAll: true
                 });
 
-                var $fx = $(".fx");
-                TweenMax.to($fx, 0, {y: 60})
-
                 var text = $(".animate"), lines = $(".line");
                 TweenMax.ticker.fps(60);
                 TweenMax.set(lines, {visibility:"visible"});
                 TweenMax.set($(".lead"), {visibility:"visible"});
-
-                $($fx).waypoint(function(direction){
-                    TweenMax.to($(this.element), 0, {autoAlpha: 1, y: 0, overwrite: "all"})
-                    this.destroy()
-                }, {
-                    offset: '85%'
-                });
-
 
                 var tl1 = new TimelineMax, split = new SplitText(text, {type: "words,chars"});
                 for (var s = 0; s < split.chars.length; s++) {
@@ -123,9 +127,6 @@
                 }, {
                     offset: '85%'
                 });
-
-
-
 
             },
             SeekInPage: function ($this) {
@@ -180,45 +181,6 @@
 
             });
             return $this;
-        },
-        StickyNavigation: function($this) {
-
-            var topOffset, bottomOffset, headerHeight;
-
-            function calculateOffsets() {
-
-                $Window.scroll();
-
-                headerHeight = parseInt($("#header").outerHeight(true)),
-                bottomOffset = $Body.height() - (headerHeight + (parseInt($("#about").outerHeight(false))- parseInt($("#about").css('paddingBottom'), 10))),
-                topOffset = headerHeight + parseInt($("#about").css('paddingTop'), 10);
-
-                if ($this.data('bs.affix') != undefined) {
-                    $this.data('bs.affix').options.offset.top = topOffset;
-                    $this.data('bs.affix').options.offset.bottom = bottomOffset;
-                }
-
-                if (($this.height() >= $Window.height()) || (parseInt($("#about-info").height()) < parseInt($this.outerHeight(true)))) {
-                    $this.removeClass('affix affix-top affix-bottom');
-                }
-            }
-            calculateOffsets();
-
-            $this.each(function (index) {
-                $(this).affix({
-                    offset: {
-                        top: topOffset,
-                        bottom: bottomOffset
-                    }
-                }).on('affixed.bs.affix', function () {
-                    calculateOffsets();
-                });
-            });
-
-            $Window.on('resize', function(){
-                calculateOffsets();
-            });
-
         }
     });
     $Document.ready(_.Core.init);

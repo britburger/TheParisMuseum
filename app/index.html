@@ -28,6 +28,25 @@
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
 
+
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@TheParisMuseum">
+        <meta name="twitter:title" content="The Paris Museum & Historical Society">
+        <meta name="twitter:description" content="The Paris Museum & Historical Society collects and archives the rich heritage of Paris, Ontario and the surrounding area.">
+        <meta name="twitter:creator" content="@TheParisMuseum">
+        <meta name="twitter:image" content="http://www.parismuseum.ca/images/paris-museum-logo-white.jpg">
+        <meta name="twitter:url" content="http://www.parismuseum.ca/">
+
+        <!-- Open Graph data -->
+        <meta property="og:title" content="The Paris Museum, Archives & Historical Society" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://www.parismuseum.ca/" />
+        <meta property="og:image" content="http://www.parismuseum.ca/images/paris-museum-logo-white.jpg" />
+        <meta property="og:description" content="The Paris Museum & Historical Society collects and archives the rich heritage of Paris, Ontario and the surrounding area." />
+        <meta property="og:site_name" content="The Paris Museum, Archives & Historical Society" />
+        <meta property="fb:admins" content="121197474589742" />
+
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
@@ -102,7 +121,7 @@
                 </header>
                 <div data-nav-id="about-section" data-nav-offset="-50" id="about">
                     <div class="container-fluid">
-                        <div class="row" id="about-info">
+                        <div class="row release-container" id="about-info">
                             <div class="col-xs-12 col-md-8 col-lg-7">
                                 <h1 class="fx"><span>The Paris Museum</span> <br/> <span>&amp; Historical Society</span></h1>
                                 <p class="fx">The volunteers of the Paris Museum &amp; Historical Society collect, preserve and interpret artifacts from Paris' heritage to display and share with the public for instruction and enjoyment.</p>
@@ -114,7 +133,7 @@
                                     <footer><cite title="Source Title">Bob Hasler, Secretary & Collections</cite></footer>
                                 </blockquote>
                                 <p class="fx">Admittance to our exhibits is by donation. The Paris Museum &amp; Historical Society is an entirely volunteer-run organization and we rely on donations from the members of our community to keep our lights on and our doors open. Any donation of $10 or more is tax deductible, this includes any in-kind donations of supplies for the museum, archive, or society. Just keep your purchase receipts, and submit them to our treasurer
-                                    <a href="mailto:info@parishistoricalsociety.ca">Chris Galloway</a> for a charity receipt. Monetary donations are always appreciated.
+                                    <a href="mailto:info@parismuseum.ca">Chris Galloway</a> for a charity receipt. Monetary donations are always appreciated.
                                 </p>
                                 <p class="fx">Donations can be made with a credit card payment through paypal, in person at the Paris Museum &amp; Historical Society during regular opening hours or by mail.</p>
                                 <div id="donate" class="row">
@@ -152,8 +171,7 @@
                                 </div>
                                 <p class="fx">If you would like to contribute an artifact to the collection, we can take donations at the museum during regular opening hours, or by appointment. If you'd like to donate an item but aren't sure whether it fits our mandate then simply get in touch to ask.</p>
                             </div>
-                            <div class="quick-info col-xs-12 col-md-4 col-lg-3 col-lg-push-1">
-                                <div class="quick-affix" data-script="StickyNavigation">
+                            <div class="quick-info col-xs-12 col-md-4 col-lg-3 col-lg-push-1 stuck release">
                                     <h3>Location</h3>
                                     <address>Syl Apps Community Centre, <br/> 51 William Street, <br/> Paris, Ontario.
                                         <br/> (Enter directly from the parking lot)
@@ -172,9 +190,8 @@
                                     <p class="small">Visits are also available by appointment</p>
                                     <h3>Contact Us</h3>
                                     <p>(519) 442-9295<br/>
-                                        <a href="mailto:info@parishistoricalsociety.ca">info@theparismuseum.com</a>
+                                        <a href="mailto:info@parismuseum.ca">info@parismuseum.ca</a>
                                     </p>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -291,7 +308,7 @@
                                 </address>
                                 <address>
                                     519-442-9295<br/>
-                                    <a href="mailto:info@parishistoricalsociety.ca">info@theparismuseum.com</a>
+                                    <a href="mailto:info@parismuseum.ca">info@parismuseum.ca</a>
                                 </address>
                             </div>
                             <div class="col-md-3">
@@ -360,10 +377,11 @@
         <script src="scripts/DrawSVGPlugin.min.js"></script>
         <script src="scripts/SplitText.min.js"></script>
         <script src="scripts/jquery.waitforimages.min.js"></script>
+        <script src="scripts/jquery.stuck.js"></script>
         <!-- bower:js -->
         <script src="bower_components/jquery.easing/js/jquery.easing.min.js"></script>
         <script src="bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
-        <script src="bower_components/bootstrap/js/affix.js"></script>
+        <script src="bower_components/fastclick/lib/fastclick.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:js({app,.tmp}) scripts/main.js -->
